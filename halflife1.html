@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프로젝트 halflife1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://kit.fontawesome.com/54f312ab5f.js" crossorigin="anonymous"></script>
+    <script src="project.js"></script>
+    <script src="jQuery.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="frame.css">
+    <style>
+        *{
+            margin:0; padding:0;
+            text-decoration: none;
+        }
+        body{
+            background-size:100%;
+            background-position-y: 40px;
+            background-repeat: no-repeat;
+            background-color:#291d0f;
+        }
+        .main{
+            background-image: linear-gradient(to bottom, transparent 70%, rgb(206, 206, 206) 100%),url("halflife1 background.jpeg");
+            margin-top:40px;
+            background-size:100%;
+            height:50vw;
+            color:White;
+        }
+        .main h1{
+            position:absolute;
+            top:40vw;
+            margin-left:50px;
+            font-size:7vw;
+        }
+        .article_left{
+            background:rgb(206, 206, 206);
+            height:300px;
+            color:rgb(105, 105, 105);
+            position: relative;
+            padding: 0 50px;
+            overflow:hidden;
+        }
+        .article_right{
+            height:300px;
+            overflow:hidden;
+            color:rgb(206, 206, 206);
+        }
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+        .inline{
+            display:inline;
+        }
+        .article_in{
+            width:800px; margin:0 auto;
+            overflow:hidden;
+        }
+        .article_in2{
+            width:900px; margin:0 auto;
+            overflow:hidden;
+        }
+        .box{
+            width:400px;
+            height:250px;
+            margin-top:25px;
+            text-align:left;
+            margin-right:50px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+        .title{
+            margin-top:50px;
+            border-radius:3px;
+        }
+        .box a img{
+            border-radius:3px;
+        }
+        .game_img{
+            margin-top:10px;
+        }
+       .explain{
+           text-align: center;
+       }
+       #main2{
+        background:rgb(233, 233, 233);
+        height:800px;
+        text-align: center;
+        color:rgb(105, 105, 105);
+        padding-top:50px;
+       }
+       #main2 h1{
+           border-top:2px solid rgb(105, 105, 105);
+       }
+       .list{
+           width:250px;
+           margin:0 auto;
+           height:110px;
+           position: relative;
+           text-align:left;
+           margin-top:8px;
+           margin-bottom:8px;
+           border-top: 2px dashed rgb(105, 105, 105);
+           border-bottom:2px dashed rgb(105, 105, 105)
+       }
+       #trailer{
+           margin:0 auto;
+       }
+       .btn{
+           position:absolute;
+           left:5px;
+           top:50%;
+       }
+       #fadeInOut {
+           width:420px;
+           margin:auto;
+           position:relative;
+           overflow:hidden;}
+       #fadeInOut>div:first-child {
+           width:1800px; 
+           height:280px; 
+           position:relative; }
+       .btn  {
+           width:40px; 
+           height:40px; 
+           line-height: 24px; 
+           text-align:center; 
+           font-size:40pt; 
+           color:white; 
+           background:black; 
+           margin:0 auto;
+           border-radius: 10px;
+           opacity: 0.3;
+           transition-duration: 0.3s; }
+        .btn:hover{
+            opacity: 1;
+            transition-duration: 0.3s;
+        }
+        #fadeInOut img {
+            width:420px; 
+            height:280px; 
+            position:relative; 
+            left:0;
+         }
+       @media screen and (max-width:767px){ 
+           .article_left, .article_right{
+            height:450px;
+            padding:0;
+           }
+           #article1{
+            height:550px;
+            margin:0 auto;
+            }
+           .box, .title{
+               display:block;
+               float:none;
+           }
+           .explain{
+               height:550px;
+               width:300px;
+               font-size:13px;
+           }
+           .article_in, .article_in2{
+            width:300px; margin:0 auto;
+            overflow:hidden;
+        }
+           #trailer{
+               width:350px;
+               height:200px;
+           }
+           #main2{
+               height:650px;
+               margin:0 auto;
+           }
+           .game_img{
+            width:300px;
+               height:200px;
+               margin:0 auto;
+               margin-top:30px;
+           }
+            #fadeInOut img {
+            width:300px; 
+            height:200px; 
+            position:relative; 
+            left:0;
+         }
+         #fadeInOut {
+           width:300px;
+         }
+         .btn{
+             top:40%;
+         }
+       }
+    </style>
+    <script>
+        window.onload = function(){
+            var gosteam = document.getElementById('gosteam');
+            gosteam.onclick = function(){
+                 var ret=confirm("Steam사이트로 이동하시겠습니까?");
+                 if(ret==true){
+                     location.href="https://store.steampowered.com/app/70/HalfLife/";
+                    }
+                }
+         }
+
+         $(document).ready(function(){
+		$(".btn1").on("click",function(){
+            var width= $('.game_img').css('width').replace(/[^0-9]/g, ""); //숫자만
+            var width_a=parseInt(width);
+            width_a+=3;
+            width_a=String(width_a);
+			$("#fadeInOut>.wrapper1").each(function(){
+				if( $(this).position().left<=width*-2) {
+					$(this).append('<img src="Halflife1 img2.jpg" alt="이미지">').animate({left:"-="+width},"slow", function(){
+							$(this).css({"left":0});
+							$(this).children("img:eq(3)").remove();
+						});						
+				}
+				else { $(this).animate({left:"-="+width_a});}
+			});
+		});
+    });
+    $(document).ready(function(){
+		$(".btn2").on("click",function(){
+            var width= $('.game_img').css('width').replace(/[^0-9]/g, ""); //숫자만
+            var width_a=parseInt(width);
+            width_a+=3;
+            width_a=String(width_a);
+			$("#fadeInOut>.wrapper2").each(function(){
+				if( $(this).position().left<=width*-2) {
+					$(this).append('<img src="Halflife1 img3.jpg" alt="이미지">').animate({left:"-="+width},"slow", function(){
+							$(this).css({"left":0});
+							$(this).children("img:eq(3)").remove();
+						});						
+				}
+				else { $(this).animate({left:"-="+width_a});}
+			});
+		});
+    });
+    $(document).ready(function(){
+		$(".btn3").on("click",function(){
+            var width= $('.game_img').css('width').replace(/[^0-9]/g, ""); //숫자만
+            var width_a=parseInt(width);
+            width_a+=3;
+            width_a=String(width_a);
+			$("#fadeInOut>.wrapper3").each(function(){
+				if( $(this).position().left<=width*-2) {
+					$(this).append('<img src="Halflife1 img4.jpg" alt="이미지">').animate({left:"-="+width},"slow", function(){
+							$(this).css({"left":0});
+							$(this).children("img:eq(3)").remove();
+						});						
+				}
+				else { $(this).animate({left:"-="+width_a});}
+			});
+		});
+	});
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <div class="gnbbar">
+        <div href="" class="gnbmenu">
+            <label for="toggle" class="gnbIcon"><i class="fas fa-bars"> <span>MENU</span></i></label>
+
+        </div>
+        <a href="main.html" class="logo"><img src="logo.png" alt="" width=45><span>HλLF-LIFE</span></a>
+    </div>
+    <div class="container">
+        <div class="gnbLayer" id="gnbLayer">
+            <ul>
+                <a href="halflife1.html">HALF-LIFE 1</a>
+                <a href="halflife2.html">HALF-LIFE 2</a>
+                <a href="BlackMesa.html">Black Mesa</a>
+                <a href="Alyx.html">HALF-LIFE Alyx</a>
+                <a href="javascript:void(0)" onclick="steam()">Steam</a>
+            </ul>
+            <div class="gnbLayer_bottom">
+                <p>© Valve Corporation.</p>
+                <p>모든 권리 보유. 모든 상표는 미국 및 기타 국가에서 각각 해당 소유자의 재산입니다. Privacy Policy  |  Legal  |  Steam Subscriber Agreement  |  Refunds</p>
+                <p class="bottom">수학과 201611563 김경민</p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <h1>HλLF-LIFE 1</h1>
+    </div>
+    <div id="article1" class="article_left">
+        <div class="article_in">
+                <img src="Halflife1 img1.jpg" width="300px" height="200px" class="left title">
+                <div class="right box"style="margin-right:0px;">
+                   <h2>HALF-LIFE 1</h2><br>
+                    <table class="introduce">
+                        <tr>
+                            <th>발매</th><td>1998년 11월 19일</td>
+                        </tr>
+                        <tr>
+                            <th>엔진</th><td>골드 소스 엔진</td>
+                        </tr>
+                        <tr>
+                            <th>장르</th><td>FPS</td>
+                        </tr>
+                        <tr>
+                            <th>심의등급</th><td><img src="심의등급1.png" alt=""width="28px"class="inline"><p class="inline"> 청소년이용불가</p></td>
+                        </tr>
+                    </table>
+                   <br><a href="javascript:void(0)" id="gosteam"><img src="steam_logo.jpg" width="100px"></a>
+                </div>
+        </div>
+    </div>
+    <div class="article_right">
+        <div class="article_in2">
+            <section class="right" id="fadeInOut">
+                <div class="wrapper1">			
+                    <img src="Halflife1 img2.jpg"  class="game_img">
+                    <img src="Halflife1 img2-2.jpg"  class="game_img">
+                    <img src="Halflife1 img2-3.jpg"  class="game_img">	
+                </div>
+                <div class="btn btn1">&#8882;</div>	
+            </section>
+            <div class="left box explain">
+                <h1 style="font-style:italic">대공명 현상</h2><br>
+                    <p>실험 도중 사고로 인해 '대공명 현상'이 발생했습니다.</p>
+                    <p>그로 인해 '블랙 메사'에 포탈이 열렸고</p>
+                    <p>'알 수 없는 것들'이 곳곳에 나타나기 시작했습니다. </p>
+                    <p>결국, 블랙 메사 내부는 점점 위험해지고 있으며</p>
+                    <p>당신은 생존을 위해 탈출해야 합니다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="article_left">
+        <div class="article_in2">
+            <section class="left" id="fadeInOut">
+                <div class="wrapper2">			
+                    <img src="Halflife1 img3.jpg"  class="game_img">
+                    <img src="Halflife1 img3-2.jpg"  class="game_img">
+                    <img src="Halflife1 img3-3.jpg"  class="game_img">	
+                </div>
+                <div class="btn btn2">&#8882;</div>	
+            </section>
+            <div class="right box explain">
+                <h1 style="font-style:italic">외계 괴생명체</h2><br>
+                    <p>블랙 메사 내부에는 포탈을 타고 온 괴생명체들이</p>
+                    <p>당신을 위협할 것이며 길을 막을 것입니다.</p>
+                    <p>그러므로, 앞으로 나아가기 위해선</p>
+                    <p>그것들과 싸워야 할 것입니다.</p>
+                    <p>주변의 무기들을 잘 활용하여 싸우십시오.</p>
+            </div>
+        </div>
+    </div>
+    <div class="article_right">
+        <div class="article_in2">
+            <section class="right" id="fadeInOut">
+                <div class="wrapper3">			
+                    <img src="Halflife1 img4.jpg"  class="game_img">
+                    <img src="Halflife1 img4-2.jpg"  class="game_img">
+                    <img src="Halflife1 img4-3.jpg"  class="game_img">	
+                </div>
+                <div class="btn btn3">&#8882;</div>	
+            </section>
+            <div class="left box explain">
+                <h1 style="font-style:italic">당신을 위협하는 것은 괴물뿐만이 아닙니다.</h2><br>
+                    <p>어째서인지 구조하러 온다던 군인들이</p>
+                    <p>되려 당신을 죽이려고 합니다.</p>
+                    <p>당신의 앞을 막는 군인들과 싸워 이기십시오.</p>
+            </div>
+        </div>
+    </div>
+    <div id="main2">
+        <h1>트레일러</h1>
+        <iframe id="trailer" width="560" height="315" src="https://www.youtube.com/embed/wtIp8jOo8_o" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br><br><br>
+        <h1></h1>
+        <br><br>
+        <h2>소개글</h2>
+        <br>
+        <p>하프라이프1은 1998년에 나온 당시</p>
+        <p>FPS에 혁신을 가지고 온 게임이었습니다.</p>
+        <div class="list">
+            <ul>
+                <li>이야기를 게임에 효과적으로 접목</li>
+                <li>레벨 디자인의 표준을 제시</li>
+                <li>혁신적인 인공지능</li>
+                <li>탁월한 음향</li>
+                <li>WASD 조작체계 정립</li>
+            </ul>
+        </div>
+        <p>지금의 FPS 게임들이 위의 요소들을 다 가졌으며</p>
+        <P>즉, 하프라이프1이 지금의 FPS의 교과서가 된 것입니다.</P>
+    </div>
+    <div class="footer">
+        <p>@수학과 201611563 김경민</p>
+        <p>2020년 1학기 웹프로그래밍 마이웹 프로젝트</p>
+        <br>
+        <h6>©Valve Corporation. ALL Rights Reserved.</h6>
+        <br>
+        <a href="javascript:void(0)" onclick="valve()"><img src="valvelogo.png" alt="" width="100"></a>
+    </div>
+</body>
+</html>

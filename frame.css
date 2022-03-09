@@ -1,0 +1,157 @@
+*{
+    margin:0; padding:0;
+    text-decoration: none;
+    font-family:bold;
+}
+.gnbbar{
+    left:0; top:0; right:0;
+    position:fixed;           
+    height:40px;
+    overflow:hidden;
+    background:rgba(2, 2, 2, 0.582);
+}
+.gnbbar *{
+    text-decoration: none;
+}
+.gnbbar{
+    position:fixed;
+    overflow:hidden;
+    z-index:1000;
+}
+.gnbmenu{
+    color:gainsboro;
+    display:inline-block;
+    padding:9px 20px 14px;
+    transition-duration: 1s;
+    width:105px;
+    font-family: "din", -apple-system, system, sans-serif;
+    background:rgba(0, 0, 0, 0);
+    border:0px;
+}
+.gnbmenu:hover{
+    color:darkorange;
+}
+.logo:hover{
+    color:darkorange;
+    background:white;
+}
+.gnbIcon{
+    width:100px; height:16px; margin-right: 7px;
+    float:left;
+}
+.logo{
+    display:inline-block;
+    color: gainsboro;
+    float:right;
+    font-family: "din", -apple-system, system, sans-serif;
+    font-size:30px;
+    width: 200px;
+    height:40px;
+    border-left:2px solid darkorange;
+    transition-duration: 1s;
+    line-height: 40px;
+}
+
+#gnbLayer{
+    position:fixed;
+    background:white;
+    left:0; top:0; bottom:0; height:100%;
+    width:220px;
+    padding: 40px 0 0 0;
+    left:-224px;
+    transition-duration: 0.5s;
+    border-right:4px solid  rgb(97, 97, 97);
+    z-index:100;
+}
+#toggle{
+    display:none;
+}
+#toggle:checked ~ .container #gnbLayer{
+    left:0;
+    transition-duration: 0.5s;
+    box-shadow : rgba(0,0,0,0.7) 0 0 0 9999px;
+    z-index : 100;
+}
+#gnbLayer a{
+    list-style-type:none;
+    border-bottom: 1px solid gray;
+    margin-bottom:10x;
+    padding:10px;
+    color:darkorange;
+    width:200px;   
+    text-align: left;
+    display:block;
+}
+.gnbLayer_bottom{
+    width:220px;
+    height:150px;
+    background:rgb(97, 97, 97);
+    bottom:0px;
+    position:fixed;
+    color: rgb(196, 195, 195);
+    font-size:12px;
+}
+.introduce{
+    border:1px solid rgb(255, 145, 0);
+    border-spacing: 1px;
+    background:rgb(206, 206, 206);
+}
+.introduce th{
+    background:rgb(255, 145, 0);
+    color:white;
+    width:94px;
+    padding-left:5px;
+    
+}
+.introduce td{
+    background: white;
+    color:black;
+    width:194px;
+    font-family:bold;
+}
+.bottom{
+    font-size: 15px;
+    bottom:0px;
+    position:absolute;
+    margin-bottom:3px;
+}
+
+.footer{
+    left:0; right:0;
+    bottom:0;
+    height:150px;
+
+    padding-left:30px;
+    padding-top:20px;
+    background:rgb(29, 28, 28);  
+    color:rgb(167, 167, 167);
+    text-align: left; 
+    font-size:13px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width:767px){ 
+    .logo span, .gnbIcon span{
+        display:none;
+    }
+    .logo img{
+        padding:3px;
+        transform: scale(1.8);
+        margin-right:10px;
+    }
+    .logo{
+    width: 40px;
+    height:40px;
+    padding-right:10px;
+    border-left:2px solid darkorange;
+    }
+    .gnbmenu{
+        width:30px;
+    }
+    .gnbIcon{
+        width:30px;
+    }
+    .gnbIcon i{
+        transform: scale(1.8);
+    }
+}

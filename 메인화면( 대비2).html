@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프로젝트 메인화면</title>
+    <script src="https://kit.fontawesome.com/54f312ab5f.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url("https://steamcdn-a.akamaihd.net/half-life.com/images/alyx/alyx_feature2.jpg");
+            background-size:100%;
+            background-position-y: 40px;
+            background-repeat: no-repeat;
+            background-color:#121918;
+        }
+        .gnbbar{
+            left:0; top:0; right:0;
+            position:fixed;           
+            height:40px;
+            overflow:hidden;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5b5b5b+0,2d2d2d+28,515151+100 */
+            background:rgba(2, 2, 2, 0.418);
+        }
+        .gnbbar *{
+            text-decoration: none;
+        }
+        .gnbbar{
+            position:fixed;
+            overflow:hidden;
+            z-index:100;
+        }
+        .gnbmenu{
+            color:gainsboro;
+            display:inline-block;
+            padding:9px 20px 14px;
+            transition-duration: 1s;
+            width:80px;
+            font-family: "din", -apple-system, system, sans-serif;
+        }
+        .gnbmenu:hover{
+            color:darkorange;
+        }
+        .logo:hover{
+            color:darkorange;
+            background:white;
+        }
+        .gnbIcon{
+            width:18px; height:16px; margin-right: 7px;
+            float:left;
+        }
+        .logo{
+            display:inline-block;
+            color: gainsboro;
+            float:right;
+            font-family: "din", -apple-system, system, sans-serif;
+            font-size:30px;
+            width: 200px;
+            height:40px;
+            border-left:2px solid darkorange;
+            transition-duration: 1s;
+        }
+        #first{
+            width:300px; margin:0 auto;
+            position:relative;
+            height:300px;
+            margin-top:70%;
+            color:white;
+            text-align:center;
+        }
+        #first>div:first-child{
+            font-family: "din", -apple-system, system, sans-serif;
+            font-size:50px;
+        }
+        #main{
+            width:800px; margin:0 auto;
+            margin-top:30%;
+            height:1000px;
+            background: gray;
+        }
+        .gnbLayer{
+            transfrom:translateZ(0);
+            opacity:1;
+            position:fixed;
+            background:white;
+            left:0; top:0; bottom:0; height:100%;
+            width:220px; padding: 62px 0 195px;
+        }
+        gnbmenu:active{
+        }
+    </style>
+</head>
+<body>
+    <div class="gnbbar">
+        <a href="" class="gnbmenu">
+            <span class="gnbIcon"><i class="fas fa-bars"></i></span>
+            <span>MENU</span>
+        </a>
+        <a href="#gnbLayer" class="logo"><img src="http://logok.org/wp-content/uploads/2015/06/Half-life-logo-1024x768.png" alt="" width=45><span>HALF-LIFE</span></a>
+    </div>
+    <div class="gnbLayer" id="gnbLayer" style="visibility: hidden;">
+    </div>
+    <div id= "first">
+        <div>HALF-LIFE</div>
+        <p>하프라이프 게임에 대한 소개의 시작말</p>
+    </div>
+    <div id="main">
+        <h1>본문</h1>
+    </div>
+</body>
+</html>
